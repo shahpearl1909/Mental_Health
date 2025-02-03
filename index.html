@@ -1,0 +1,263 @@
+<html>
+  
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mental Health Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+  </head>
+  
+  <body>
+    
+
+    <div class="navbar">
+        <div class="navbar-container">
+          <a href="#home" class="logo"><svg viewBox="0 0 576 512" width="25" title="home">
+            <path d="M280.37 148.26L96 300.11V464a16 16 0 0 0 16 16l112.06-.29a16 16 0 0 0 15.92-16V368a16 16 0 0 1 16-16h64a16 16 0 0 1 16 16v95.64a16 16 0 0 0 16 16.05L464 480a16 16 0 0 0 16-16V300L295.67 148.26a12.19 12.19 0 0 0-15.3 0zM571.6 251.47L488 182.56V44.05a12 12 0 0 0-12-12h-56a12 12 0 0 0-12 12v72.61L318.47 43a48 48 0 0 0-61 0L4.34 251.47a12 12 0 0 0-1.6 16.9l25.5 31A12 12 0 0 0 45.15 301l235.22-193.74a12.19 12.19 0 0 1 15.3 0L530.9 301a12 12 0 0 0 16.9-1.6l25.5-31a12 12 0 0 0-1.7-16.93z" />
+          </svg></a>
+          
+          <!-- Hamburger Button -->
+          <button class="hamburger-menu" aria-label="Toggle Navigation">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+          </button>
+          
+          <!-- Navigation Links -->
+          <ul class="navbar-links">
+            <li><a href="#info">Information</a></li>
+            <li><a href="#tracker">Tracker</a></li>
+            <li><a href="#survey">Survey</a></li>
+            <li><a href="#method">Methods</a></li>
+            <li><a href="#help">Help</a></li>
+          </ul>
+        </div>
+    </div>
+          
+
+
+</div>
+    <div class="header" id="home">
+  <h1>My Website</h1>
+  <p style="color: #333;">The mission of this website is to provide accessible, reliable, and supportive resources to individuals seeking to understand and improve their mental health. Created from a deeply personal commitment to mental well-being, this platform is dedicated to offering tools, information, and encouragement to break the stigma surrounding mental health struggles. It aims to foster a welcoming space where individuals can find guidance, share their experiences, and gain confidence in their journey toward healing and self-discovery. By focusing on education, empowerment, and community, the website strives to make mental health care a priority for everyone, encouraging people to seek support and take the necessary steps toward a healthier, more balanced life.</p>
+</div>
+
+  
+<!-- Information -->
+<div id="info">
+  <br>
+    <h2>The Importance of Mental Health</h2>
+  <br>
+    <p>
+        Mental health is a crucial aspect of overall well-being, influencing how individuals think, feel, and act. It plays a significant role in how people cope with stress, relate to others, and make decisions in their daily lives. A healthy mind allows for better emotional regulation, problem-solving, and resilience, while mental health challenges can impact every part of a person's life, from relationships to work and even physical health. Mental health struggles, if not addressed, can lead to chronic conditions and may even contribute to physical ailments. As society becomes more aware of mental health, it is vital to break down the stigma surrounding it and encourage open conversations. Providing resources and support can help individuals develop coping strategies, seek help when needed, and ultimately improve their quality of life. Just as we care for our physical health, taking care of mental health is equally important for achieving balance and thriving in life.
+      <br><br><br>
+      Mental health is foundational to living a fulfilling and productive life. It affects how we handle everyday challenges, form relationships, and pursue our goals. When mental health is neglected, it can lead to feelings of isolation, stress, and a decline in overall well-being. Just as we take steps to maintain our physical health, caring for our mental health is equally crucial to ensure we can function at our best. Prioritizing mental health not only supports personal growth but also strengthens communities, as individuals who feel supported and understood are more likely to contribute positively to society. By recognizing the importance of mental health, we create a culture of empathy and resilience where everyone can thrive.
+    </p><br><br><br>
+</div>  
+
+<!-- Mood Tracker -->
+<div id="tracker">
+    <h1>Mood Tracker</h1>
+    <h3 for="moodInput">Select your mood (1-10):</h3>
+    <p>From low energy to high spirits</p>
+    <input type="number" id="moodInput" min="1" max="10" value="5" oninput="updateMoodDisplay()">
+    <span id="moodDisplay">5</span>
+    <button onclick="logMood()">Log Mood</button>
+    <p id="moodMessage"></p>
+    <button onclick="toggleMoodHistory()">Toggle Mood History</button>
+    <div id="moodHistory" style="display:none;">
+        <h3>Mood History</h3>
+        <ul id="historyList"></ul>
+    </div>
+</div>
+
+
+<!-- Survey Section -->
+<div id="survey">
+    <h2>Stress Survey</h2>
+    <h4>(1-4) Low stress - High stress</h4>
+    <form id="stressSurvey">
+        <ul>
+            <li><label for="q1">1. When I wake up, I feel like I’m already behind or dreading the day ahead.</label>
+            <input type="number" id="q1" min="0" max="4" required></li>
+        
+            <li><label for="q2">2. I feel overwhelmed by the demands of my life.</label>
+                <input type="number" id="q2" min="0" max="4" required></li>
+        
+            <li><label for="q3">3. I find it hard to relax.</label>
+                <input type="number" id="q3" min="0" max="4" required></li>
+        
+            <li><label for="q4">4. I often feel anxious or worried about future events.</label>
+                <input type="number" id="q4" min="0" max="4" required></li>
+        
+            <li><label for="q5">5. I find it hard to concentrate on tasks due to stress.</label>
+                <input type="number" id="q5" min="0" max="4" required></li>
+
+            <li><label for="q6">6. I experience physical symptoms such as headaches or stomachaches when stressed.</label>
+                <input type="number" id="q6" min="0" max="4" required></li>
+
+            <li><label for="q7">7. I feel exhausted even after a full night’s sleep.</label>
+                <input type="number" id="q7" min="0" max="4" required></li>
+
+            <li><label for="q8">8. I struggle to manage my work or daily responsibilities due to stress.</label>
+                <input type="number" id="q8" min="0" max="4" required></li>
+
+            <li><label for="q9">9. I feel disconnected from my emotions and surroundings when stressed.</label>
+                <input type="number" id="q9" min="0" max="4" required></li>
+
+            <li><label for="q10">10. I feel that my stress levels negatively affect my relationships.</label>
+                <input type="number" id="q10" min="0" max="4" required></li>
+        </ul>
+        <button type="button" onclick="submitSurvey()">Submit Survey</button>
+    </form>
+    <div id="surveyResults"></div>
+</div>
+
+<br><hr><hr>  
+  
+<!--Methods-->
+<div class="row" id="method">
+  <br><br>
+  <h1>Coping Methods</h1>
+  <br>
+  <div class="leftcolumn">
+    
+    <div class="card">
+      <h2>Mindfulness and Meditation</h2>
+      <h5>(Self-Practice)</h5>
+      <div class="image-container">
+        <img style="border-radius: 20px;" src="https://cdn.pixabay.com/photo/2017/01/20/11/51/stones-1994691_1280.jpg" alt="Image Description">
+      </div>
+      <br>
+      <p>A simple yet highly effective mental health method is journaling. Journaling allows you to reflect on your thoughts and emotions, helping you process feelings, set goals, and track progress over time. This practice can promote emotional clarity and reduce stress by providing an outlet for self-expression. Writing about your day, your worries, or your accomplishments can help create a sense of order and focus, and it’s often used as a tool in mindfulness practices. It also helps manage overwhelming thoughts by organizing them on paper, making them feel less chaotic. Whether it’s free writing or using structured prompts, journaling can be done daily to improve mental well-being.</p>
+    </div>
+    
+    <div class="card">
+      <h2>Therapy and Counseling</h2>
+      <h5>(External Help)</h5>
+      <div class="image-container">
+        <img style="border-radius: 20px;" src="https://media.istockphoto.com/id/1435001168/photo/a-teen-girl-in-psychotherapy.jpg?s=612x612&w=0&k=20&c=A34KpyRI_m8CQxjfJHW9z-f3aMOY53EljP2zyXqMveM=">
+      </div>
+      <br>
+      <p>Another method for improving mental health is engaging in creative expression, such as art, music, or writing. You don’t need external help to create; these forms of expression can be therapeutic in themselves. For instance, drawing, painting, or writing music allows individuals to channel emotions in a non-verbal way. Art therapy, which involves using artistic practices for self-expression, has been shown to reduce stress and enhance mood. Engaging in creative activities can serve as a personal and enjoyable outlet for stress and emotional release.</p>
+    </div>
+
+    <div class="card">
+        <h2>Physical Exercise </h2>
+        <h5>(Self-Practice)</h5>
+        <div class="image-container">
+          <img style="border-radius: 20px;" src="https://media.istockphoto.com/id/1324877187/photo/close-up-of-athletic-woman-rolling-up-her-exercise-mat-after-practicing-at-health-club.jpg?s=612x612&w=0&k=20&c=p8aas4SeJ59cnsHbym2WLIhhHT2855XU01IgnhwBIHM=">
+        </div>
+        <br>
+        <p>One of the most effective and accessible methods for improving mental health is regular physical exercise. Engaging in physical activity, whether it’s walking, running, yoga, or even dancing, can have significant positive effects on mental well-being. Exercise triggers the release of endorphins, which are natural mood boosters, and can reduce symptoms of anxiety, depression, and stress. Even short bursts of physical activity can help clear the mind, improve sleep quality, and enhance overall feelings of well-being. Incorporating exercise into your daily routine doesn’t require a gym membership or expensive equipment, and it can be easily tailored to suit your personal preferences, making it an excellent self-care method.</p>
+    </div>
+  </div>
+  
+  
+  <div class="rightcolumn">
+    
+    <div class="card">
+      <h2>Guided Meditation for Beginners</h2>
+      <h5>(YouTube Video)</h5>
+      <br>
+      <div class="image-container_ex">
+        <a href = "https://www.youtube.com/watch?v=inpok4MKVLM"><img style="border-radius: 20px;" src="https://media.istockphoto.com/id/1459538299/photo/woman-hands-or-lotus-pose-meditation-on-sunset-beach-ocean-or-sea-in-mental-health-mind.jpg?s=612x612&w=0&k=20&c=bV9hF5cTOLc8xjc7US3zqoknNXwyOTpzU0w-7HLw_EI="></a>
+      </div>
+      <br>
+      <p>For anyone new to meditation, this guided meditation video is a great way to get started: Guided Meditation for Beginners. This video focuses on breathwork and relaxation, perfect for anyone looking to incorporate mindfulness into their daily routine.</p>
+    </div>
+    
+   
+    <div class="card">
+      <h2>Therapists and Counseling Services</h2>
+      <br>
+      <div class="image-container_ex">
+        <a href = "https://www.betterhelp.com/"><img style="border-radius: 20px;" src="https://media.istockphoto.com/id/1131100108/photo/young-man-alcoholic-on-therapy-session.jpg?s=612x612&w=0&k=20&c=Imsko6rotFcGqd9Mq6ilKzBk4tvV213R8CJ9YbvUKXA="></a>
+      </div>
+      <br>
+      <p>If you feel that therapy might be helpful but prefer virtual options, the BetterHelp platform offers online counseling with licensed therapists: BetterHelp Therapy. This service provides access to professional therapy from the comfort of your home, allowing you to connect with a therapist via messaging, phone, or video.</p>
+    </div>
+    
+    <div class="card">
+      <h2>Guided Yoga for Mental Health</h2>
+      <h5>(YouTube Video)</h5>
+      <br>
+      <div class="image-container_ex">
+        <a href = "https://www.youtube.com/watch?v=4pKly2JojMw"><img style="border-radius: 20px;" src="https://cdn.pixabay.com/photo/2019/01/20/20/54/sunset-3944688_640.jpg"></a>
+      </div>
+      <br>
+      <p>This gentle yoga routine is specifically designed to reduce anxiety and promote relaxation: Yoga for Anxiety and Stress Relief. It's beginner-friendly and can be done from home, making it a great way to improve both physical and mental health.</p>
+    </div>
+
+    <div class="card">
+        <a href="https://docs.google.com/document/d/1js6XrugKp4n1E-BqRE-hqMnGk1J7q5A47OnoXWwLJ64/edit?usp=sharing"><h2>Citation</h2></a>
+      </div>
+    
+  </div>
+</div>
+    
+<!-- Reaching out for help -->
+<div class="row" id="help">
+  <br><br>
+  <h1>Reaching Out For Help</h1>
+  <br>
+  <div class="leftcolumn">
+    
+    <div class="card">
+      <h2>Seeking Support</h2>
+      <br>
+      <div class="image-container_ex">
+        <img src="https://media.istockphoto.com/id/1460014746/photo/hands-love-and-care-touching-in-support-trust-or-unity-for-community-compassion-or.jpg?s=612x612&w=0&k=20&c=ShVX4nF5DdSEEnJBfsvsMy4zF3e1wQpJsc7VADTJ4T4=">
+      </div>
+      <br><br>
+      <p>It's important to remember that seeking help for mental health is a sign of strength, not weakness. Everyone faces challenges in life, and reaching out for support can provide the necessary tools to cope and heal. Whether you’re feeling overwhelmed, anxious, or depressed, speaking with a professional or connecting with supportive friends and family can make a significant difference in your well-being. Mental health professionals, such as therapists or counselors, can offer strategies and a safe space to explore your emotions. It’s also vital to remember that seeking help doesn’t mean you're alone in your struggle—many people go through similar experiences and benefit from support. Whether it’s through professional therapy, online resources, or support groups, reaching out is a crucial step toward taking care of your mental health and finding peace.</p>
+      <br>
+    </div>
+
+    <div class="card">
+        <h2>How To Ask For Help</h2>
+        <br>
+        <div class="image-container_ex">
+            <img src = "https://media.istockphoto.com/id/1456109827/photo/man-is-giving-helping-hand-silhouettes-of-people-climbing-on-mountain-at-sunset-help-and.jpg?s=612x612&w=0&k=20&c=yOe-5QtVircsdPlRvarqAQgMgSLyp6kZ9gR6UUuLYEE=">
+          </div>
+        <br><br>
+        <p>Sometimes, even when individuals are aware that they need support, they struggle with how to ask for it. This can be due to feelings of vulnerability, shame, or simply not knowing where to begin. Learning how to communicate mental health needs clearly and effectively is a vital skill. It’s important to express your feelings and let others know what you’re going through, whether that’s a close friend, family member, or professional. For many, just saying “I’m not okay” is a powerful first step in seeking support. Practicing self-compassion and acknowledging that it’s okay to need help can also make the process easier. Additionally, it can be helpful to understand that you don’t have to have all the answers or even know exactly what you need at first. Sometimes, just reaching out and starting the conversation is enough to begin the healing process.
+             It's also worth noting that people may not always know how to respond when someone opens up to them about mental health struggles. Being patient with both yourself and others as you learn to navigate these conversations can make it easier to ask for help when it’s needed. The key takeaway is that reaching out doesn’t have to be perfect; it just needs to be a step in the right direction.</p>
+             <br>
+      </div>
+
+  </div>
+  
+  <div class="rightcolumn">   
+    <div class="card">
+      <h3>Resources for Help</h3>
+      <div class="fakeimg">
+        <a href="https://988lifeline.org/"><h2>National Suicide Prevention Lifeline (USA)</h2></a>
+        <p>Call 1-800-273-TALK (8255) for confidential support 24/7.<br> This resource offers immediate help to those in crisis and can connect you to local professionals.</p>
+      </div>
+      <br>
+      <div class="fakeimg">
+        <a href="https://www.crisistextline.org/"><h2>Crisis Text Line</h2></a>
+        <p>Text HOME to 741741 for 24/7 text-based support in the USA.<br> This service provides immediate support for anyone experiencing emotional distress, offering a confidential text-based solution.</p>
+      </div>
+      <br>
+      <div class="fakeimg">
+        <a href="https://www.nami.org/"><h2>National Alliance on Mental Illness (NAMI)</h2></a>
+        <p>NAMI offers resources, support groups, and educational tools to help individuals and families cope with mental health issues.</p>
+      </div>
+      <br>
+      <div class="fakeimg">
+        <a href="https://www.samhsa.gov/find-help/national-helpline"><h2>SAMHSA Helpline</h2></a>
+        <p>Call 1-800-662-HELP (4357) for free, confidential, 24/7 support for individuals and families facing mental health or substance use disorders.</p>
+      </div>
+      <br>
+      <div class="fakeimg">
+        <a href="https://docs.google.com/document/d/1Fk4FbRgHGPcwU6LnFcTIqEbqbTu26C_dbvBEM9xeh84/edit?usp=sharing"><h2>Citation</h2></a>
+      </div>
+    </div>
+</div>
+    
+  </body>
+  
+</html>
