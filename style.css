@@ -3,27 +3,29 @@
 }
 
 body {
-  font-family:'Courier New', Courier, monospace;
+  font-family: 'Courier New', Courier, monospace;
   padding: 10px;
   background: #B4C8B0;
+  margin: 0;
 }
 
-/* Header/Blog Title */
 .header {
   padding: 30px;
   text-align: center;
   background: white;
-  height: 450px;
+  height: auto;  /* Removed fixed height for responsiveness */
   border-radius: 8px;
   color: #B4C8B0;
   border-style: double;
   border-width: 20px;
 }
 
-.header h1{
+.header h1 {
   padding-top: 50px;
-  font-size: 50px;
+  font-size: 2.5em;  /* Adjusted size for better readability */
+  margin: 0;
 }
+
 
 
 /* Navigation bar */
@@ -135,21 +137,21 @@ body {
   }
 }
 
-/* Create two unequal columns that floats next to each other */
-/* Left column */
+
+ 
+
 .leftcolumn {   
   float: left;
   width: 75%;
+  padding-right: 20px;
 }
 
-/* Right column */
 .rightcolumn {
   float: left;
   width: 25%;
   padding-left: 20px;
 }
 
-/* Fake image */
 .fakeimg {
   background-color: #D1D3D4;
   width: 100%;
@@ -157,7 +159,6 @@ body {
   border-radius: 8px;
 }
 
-/* Add a card effect for articles */
 .card {
   background-color: white;
   padding: 20px;
@@ -165,41 +166,18 @@ body {
   border-radius: 8px;
 }
 
-/* Clear floats after the columns */
 .row::after {
   content: "";
   display: table;
   clear: both;
 }
 
-.row{
+.row {
   text-align: center;
   text-decoration: underline;
 }
 
-/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 800px) {
-  .leftcolumn, .rightcolumn {   
-    width: 100%;
-    padding: 0;
-  }
-}
-
-/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-@media screen and (max-width: 400px) {
-  .topnav a {
-    float: none;
-    width: 100%;
-    
-  }
-}
-
-#info{
-  height: 450px;
-  text-align: center;
-}
-
- #info, #tracker, #survey {
+#info, #tracker, #survey {
   padding: 20px;
   margin: 20px;
   background-color: white;
@@ -208,12 +186,6 @@ body {
   border-style: dotted;
   border-color: #D1D3D4;
   border-width: 5px;
-}
-
-/* Mood Tracker Section */
-#tracker{
-  padding:100px;
-  text-align-last: center;
 }
 
 #tracker input {
@@ -255,7 +227,6 @@ body {
   margin-bottom: 10px;
 }
 
-/* Survey Section */
 #survey form {
   margin-top: 20px;
 }
@@ -286,7 +257,7 @@ body {
   font-size: 18px;
 }
 
-/*Images*/
+/* Images */
 .image-container {
   width: 100%; 
   height: 400px; 
@@ -302,11 +273,89 @@ body {
 .image-container_ex {
   width: 100%; 
   height: 250px; 
-  overflow: hidden; 
-
+  overflow: hidden;
+}
 
 .image-container_ex img {
-  width: 100%; /
+  width: 100%;
   height: 100%; 
   object-fit: cover; 
 }
+
+/* Mobile/Responsive Adjustments */
+@media screen and (max-width: 800px) {
+  .leftcolumn, .rightcolumn {   
+    width: 100%;
+    padding: 0;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+  }
+
+  .navbar li {
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+  }
+
+  .header h1 {
+    font-size: 2em;  /* Smaller title for mobile */
+    margin-top: 20px;
+  }
+
+  #info, #tracker, #survey {
+    margin: 10px 0;
+    padding: 15px;
+  }
+
+  .card {
+    padding: 15px;
+    margin: 10px 0;
+  }
+
+  .image-container {
+    height: 250px;  /* Adjusted height for mobile */
+  }
+
+  .image-container_ex {
+    height: 200px;  /* Adjusted height for mobile */
+  }
+
+  #tracker input {
+    width: 80%;  /* Make input field more flexible */
+  }
+
+  #survey input {
+    width: 80%;  /* Make input field more flexible */
+  }
+
+  #survey button {
+    width: 100%;  /* Make button span full width */
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .navbar li {
+    padding: 8px;
+    font-size: 1em;
+  }
+
+  .header h1 {
+    font-size: 1.8em;  /* Even smaller for very small screens */
+  }
+
+  .navbar a {
+    font-size: 1em;
+  }
+
+  #tracker input {
+    width: 90%;  /* Adjust input field for smaller screens */
+  }
+
+  #survey input {
+    width: 90%;  /* Adjust input field for smaller screens */
+  }
+}
+
+
