@@ -2,10 +2,20 @@
 const hamburgerButton = document.querySelector('.hamburger-menu');
 const navbarLinks = document.querySelector('.navbar-links');
 
-// Event listener to toggle the 'active' class
-hamburgerButton.addEventListener('click', () => {
-  navbarLinks.classList.toggle('active');
-});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburgerButton = document.querySelector('.hamburger-button');
+    const navbarLinks = document.querySelector('.navbar-links');
+  
+    if (hamburgerButton && navbarLinks) {
+      hamburgerButton.addEventListener('click', () => {
+        navbarLinks.classList.toggle('active');
+      });
+    } else {
+      console.error('Elements not found in the DOM');
+    }
+  });
+  
 
 
 // Mood Tracker Logic

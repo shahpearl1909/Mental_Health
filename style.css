@@ -1,6 +1,5 @@
 
 
-
 /* Navigation bar */
 .navbar {
   background-color: #5e5e5e;
@@ -31,7 +30,7 @@
 }
 
 /* Hamburger Button (Three Lines) */
-.hamburger-menu {
+.hamburger-button {
   display: none; /* Hidden by default on larger screens */
   flex-direction: column;
   justify-content: space-between;
@@ -47,7 +46,7 @@
   right: 10px;
 }
 
-.hamburger-menu .line {
+.hamburger-button .line {
   width: 30px;
   height: 4px;
   background-color: white;
@@ -86,7 +85,7 @@
   }
 
   /* Show the hamburger menu on small screens */
-  .hamburger-menu {
+  .hamburger-button {
     display: flex;
   }
 
@@ -117,14 +116,16 @@
 }
 
 body {
-  font-family: 'Courier New', Courier, monospace;
+  font-size: large;
+  font-family: helvetica;
   padding: 10px;
   background: #B4C8B0;
   margin: 0;
 }
 
 .header {
-  padding: 30px;
+  padding: 80px;
+  padding-top: 100px;
   text-align: center;
   background: white;
   height: auto;  /* Removed fixed height for responsiveness */
@@ -135,11 +136,13 @@ body {
 }
 
 .header h1 {
-  padding-top: 50px;
   font-size: 2.5em;  /* Adjusted size for better readability */
   margin: 0;
 }
 
+h1{
+  text-decoration: underline;
+}
 
 .leftcolumn {   
   float: left;
@@ -173,10 +176,7 @@ body {
   clear: both;
 }
 
-.row {
-  text-align: center;
-  text-decoration: underline;
-}
+
 
 #info, #tracker, #survey {
   padding: 20px;
@@ -283,6 +283,8 @@ body {
   object-fit: cover; 
 }
 
+
+
 /* Mobile/Responsive Adjustments */
 @media screen and (max-width: 800px) {
   .leftcolumn, .rightcolumn {   
@@ -327,16 +329,18 @@ body {
   }
 }
 
-  .header h1 {
-    font-size: 1.8em;  /* Even smaller for very small screens */
-  }
-
-
-  #tracker input {
-    width: 90%;  /* Adjust input field for smaller screens */
-  }
-
-  #survey input {
-    width: 90%;  /* Adjust input field for smaller screens */
-  }
+  
+.header h1 {
+  font-size: 1.8em;  /* Even smaller for very small screens */
 }
+
+
+#tracker input {
+  width: 90%;  /* Adjust input field for smaller screens */
+}
+
+#survey input {
+  width: 90%;  /* Adjust input field for smaller screens */
+}
+
+
